@@ -8,8 +8,22 @@
     , initial-scale=1.0"
         />
         <title>PHP ToDo List JSON</title>
+        <link rel="stylesheet" href="app.css" />
     </head>
     <body>
+        <div id="app">
+            <div>
+                <h2>To Do List</h2>
+                <input type="text" placeholder="Inserisci una task" v-model="newTask" @keyup.enter="addTask"/>
+                <div>
+                    <ul>
+                        <li v-for="(toDoItem, index) in toDoList" :key="index" @click="doneTask(index)" :style="{ textDecoration: (toDoItem.done)?'line-through':'none' }">
+                            {{ toDoItem.text }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./js/app.js"></script>
