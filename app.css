@@ -1,14 +1,76 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: lightcyan;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 
 ul,
-ol {
-    list-style-type: none;
+ol,
+menu {
+	list-style: none;
 }
+
+body {
+	background-color: #022b42;
+	color: #f0f3fa;
+}
+
+.container {
+	max-width: 700px;
+	margin: 50px auto;
+	background-color: #006da4;
+	padding: 20px;
+	border-radius: 30px;
+}
+
+.todos_item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #006494;
+	margin: 4px;
+	border-radius: 30px;
+}
+
+.input-field{
+	position: relative;
+	margin: 20px 0;
+  }
+  .input-field input{
+	 width: 350px;
+	height: 60px;
+	border-radius: 6px;
+	font-size: 18px;
+	padding: 0 15px;
+	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+	outline: none;
+  }
+  .input-field label{
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 19px;
+	pointer-events: none;
+	transition: 0.3s;
+  }
+  input:focus{
+	border: 2px solid #18ffff;
+  }
+  input:focus ~ label,
+  input ~ label{
+	top: 0;
+	left: 15px;
+	font-size: 16px;
+	padding: 10px;
+	background: #006da4;
+  }
+
+  .input-box {
+	margin-left: 10px;
+  }

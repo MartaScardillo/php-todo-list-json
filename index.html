@@ -9,16 +9,23 @@
         />
         <title>PHP ToDo List JSON</title>
         <link rel="stylesheet" href="app.css" />
+        <script src="https://kit.fontawesome.com/f5eda7a296.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="app">
-            <div>
-                <h2>To Do List</h2>
-                <input type="text" placeholder="Inserisci una task" v-model="newTask" @keyup.enter="addTask"/>
+            <div class="container">
+                <div class="input-box">
+                    <h2>To Do List</h2>
+                    <div class="input-field">
+                        <input type="text" v-model="newTask" @keyup.enter="addTask"> 
+                        <label>New Task</label>
+                    </div>
+                </div>
                 <div>
                     <ul>
-                        <li v-for="(toDoItem, index) in toDoList" :key="index" @click="doneTask(index)" :style="{ textDecoration: (toDoItem.done)?'line-through':'none' }">
-                            {{ toDoItem.text }}
+                        <li class="todos_item" v-for="(toDoItem, index) in toDoList" :key="index" >
+                            <span @click="doneTask(index)" :style="{ textDecoration: (toDoItem.done)?'line-through':'none' }">{{ toDoItem.text }}</span>
+                            <span @click="deleteTask(index)"><i class="fa-solid fa-trash-can"></i></span>
                         </li>
                     </ul>
                 </div>

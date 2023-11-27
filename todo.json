@@ -1,30 +1,22 @@
 [
     {
-        "text": "ho paura",
-        "done": false
-    },
-    {
-        "text": "fgs",
-        "done": false
-    },
-    {
-        "text": "fsdg",
-        "done": false
-    },
-    {
-        "text": "sdg",
-        "done": false
-    },
-    {
-        "text": "sdrg",
-        "done": false
-    },
-    {
-        "text": "cvnbdcxbdfxbdfb",
+        "text": "aiuto",
         "done": true
     },
     {
-        "text": "FUNGE",
+        "text": "ci sono",
         "done": false
+    },
+    {
+        "text": "riuscita",
+        "done": false
+    },
+    {
+        "text": "yay",
+        "done": true
+    },
+    {
+        "text": "banana",
+        "done": true
     }
 ]

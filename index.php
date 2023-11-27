@@ -10,7 +10,7 @@
             if (file_exists($json)) {
                 $jsonData = file_get_contents($json);
                 $jsonDataDecode = json_decode($jsonData, true);
-                if ($jsonDataDecode == null) {
+                if ($jsonDataDecode === null) {
                     return 0;
                 }
                 return $jsonDataDecode;
@@ -35,10 +35,10 @@
     } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dataInput = file_get_contents('php://input');
         $data = json_decode($dataInput, true);
-        if ($data != null) {
+        if ($data !== null) {
             saveDataJson($data);
         } else {
-            error_log('BANANA');
+            error_log('Error');
         }
     }
 ?>

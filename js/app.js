@@ -45,6 +45,12 @@ createApp({
         doneTask(index){
             this.toDoList[index].done = !this.toDoList[index].done;
             this.saveToDoList();
+        },
+        deleteTask(index) {
+            console.log(this.toDoList);
+            this.toDoList.splice(index, 1);
+            console.log(this.toDoList);
+            this.saveToDoList();
         }
     }
 }).mount('#app');
