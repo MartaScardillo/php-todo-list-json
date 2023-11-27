@@ -34,7 +34,7 @@ createApp({
             }
         },
         saveToDoList(){
-            axios.post('http://localhost:8888/Esercizi/php-todo-list-json/index.php', this.toDoList, { headers: { 'Content-Type': 'multipart/form-data'}})
+            axios.post('http://localhost:8888/Esercizi/php-todo-list-json/index.php', this.toDoList, { headers: { 'Content-Type': 'application/json'}})
             .then(Response => {
                 console.log(Response);
             })

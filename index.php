@@ -10,9 +10,12 @@
             if (file_exists($json)) {
                 $jsonData = file_get_contents($json);
                 $jsonDataDecode = json_decode($jsonData, true);
+                if ($jsonDataDecode == null) {
+                    return 0;
+                }
                 return $jsonDataDecode;
             }
-            return [];
+            return 0;
         }
 
     function saveDataJson($data)
@@ -23,10 +26,19 @@
         }
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-        echo json_encode(getDataJson());
+        $jsonData = getDataJson();
+        if ($jsonData) {
+            echo json_encode($jsonData);
+        } else {
+            echo json_encode([]);
+        }
     } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dataInput = file_get_contents('php://input');
         $data = json_decode($dataInput, true);
-        saveDataJson($data);
+        if ($data != null) {
+            saveDataJson($data);
+        } else {
+            error_log('BANANA');
+        }
     }
 ?>
